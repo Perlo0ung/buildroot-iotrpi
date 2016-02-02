@@ -26,9 +26,9 @@ compile_buildroot() {
 
 patch_configs_package_setup() {
 	#patch package Config.in
-	grep -q -e 'IOTRPI' $BUILDROOT_DIR/package/Config.in || echo -e "menu \"IOTRPI packages\"\n\tsource package/gpiomod/Config.in\nendmenu" >> $BUILDROOT_DIR/package/Config.in
+	grep -q -e 'IOTRPI' $BUILDROOT_DIR/package/Config.in || echo -e "menu \"IOTRPI packages\"\n\tsource package/gpiomod/Config.in\n\tsource package/ledtest/Config.in\nendmenu" >> $BUILDROOT_DIR/package/Config.in
 	
-	ln -sfn $PWD/packages/gpiomod $BUILDROOT_DIR/package
+	ln -sfn $PWD/packages/* $BUILDROOT_DIR/package
 
 	mkdir -p $BUILDROOT_DIR/dl/
 
@@ -44,6 +44,8 @@ run_qemu() {
 
 
 export ARCH=arm
+
+
 
 download_buildroot
 fhs_skeleton_ramfs

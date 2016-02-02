@@ -1,0 +1,5 @@
+config BR2_PACKAGE_LEDTEST
+    bool "ledtest"
+    default y
+    help
+            Simple ledtest application.

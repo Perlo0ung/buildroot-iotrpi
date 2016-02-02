@@ -16,7 +16,7 @@ I. Building
 How to build:
 
 - ```sh setup.sh```
-- copy u-boot.bin, bcm2835-rpi-b.dtb, zImage, rootfs.cpio.uboot to an sdcard
+- copy u-boot.bin, bcm2835-rpi-b.dtb, zImage, boot.scr.uimg, rootfs.cpio.uboot to an sdcard
 - Boot your RPI, or use Qemu
 
 II. Misc

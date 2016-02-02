@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2015.11.1 Configuration
+# Buildroot 2015.11.1-g439d11d Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 
@@ -2093,6 +2093,7 @@ BR2_PACKAGE_SYSTEMD_ARCH_SUPPORTS=y
 # IOTRPI packages
 #
 BR2_PACKAGE_GPIOMOD=y
+BR2_PACKAGE_LEDTEST=y
 
 #
 # Filesystem images

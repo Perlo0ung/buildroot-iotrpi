@@ -1,0 +1,28 @@
+#!/bin/sh
+
+/bin/busybox --install -s
+mount -t proc /proc /proc
+mount -t sysfs /sys /sys
+mount -t tmpfs /tmp /tmp
+mount -t devpts /dev/pts /dev/pts
+
+#disable printk msg on screen
+clear
+echo 0 > /proc/sys/kernel/printk
+
+mdev -s
+
+echo -e "\ncompleted initialisation"
+cat <<'EOF'
+              
+        .__       .__    .__                
+  _____ |__| ____ |  |__ |  |  __ _____  ___
+ /     \|  |/ ___\|  |  \|  | |  |  \  \/  /
+|  Y Y  \  \  \___|   Y  \  |_|  |  />    < 
+|__|_|  /__|\___  >___|  /____/____//__/\_ \
+      \/        \/     \/                 \/
+
+EOF
+
+# fix for /bin/sh: can't access tty; job control turned off
+setsid cttyhack sh

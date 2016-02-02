@@ -1,0 +1,4 @@
+config BR2_PACKAGE_GPIOMOD
+    bool "gpiomod"
+    help
+            kernel GPIO module

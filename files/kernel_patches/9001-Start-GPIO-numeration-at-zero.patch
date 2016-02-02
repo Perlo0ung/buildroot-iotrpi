@@ -1,0 +1,11 @@
+--- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c	2014-11-19 20:14:43.495905335 +0100
++++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c.2014-11-19 20:14:27.600196113 +0100
+@@ -382,7 +382,7 @@
+ 	.get = bcm2835_gpio_get,
+ 	.set = bcm2835_gpio_set,
+ 	.to_irq = bcm2835_gpio_to_irq,
++	.base = 0,
+-	.base = -1,
+ 	.ngpio = BCM2835_NUM_GPIOS,
+ 	.can_sleep = false,
+ };

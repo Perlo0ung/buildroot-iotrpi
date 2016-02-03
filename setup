@@ -20,21 +20,17 @@ download_buildroot() {
 
 compile_buildroot() {
 	pushd $BUILDROOT_DIR
-	make
+	make BR2_EXTERNAL=../external_packages/packages
 	popd
 }
 
 patch_configs_package_setup() {
-	#patch package Config.in
-	grep -q -e 'IOTRPI' $BUILDROOT_DIR/package/Config.in || echo -e "menu \"IOTRPI packages\"\n\tsource package/gpiomod/Config.in\n\tsource package/ledtest/Config.in\nendmenu" >> $BUILDROOT_DIR/package/Config.in
-	
-	ln -sfn $PWD/packages/* $BUILDROOT_DIR/package
-
 	mkdir -p $BUILDROOT_DIR/dl/
 
-	pushd packages_src
+	#copy sources to download dir
+	pushd external_packages/packages_source
 	find . -mindepth 1 -maxdepth 1 -type d -exec sh -c 'echo $(tar cfz {}.tar.gz $(basename {}))' \;
-	mv *.tar.gz ../$BUILDROOT_DIR/dl/
+	mv *.tar.gz ../../$BUILDROOT_DIR/dl/
 	popd
 }
 
@@ -44,8 +40,6 @@ run_qemu() {
 
 
 export ARCH=arm
-
-
 
 download_buildroot
 fhs_skeleton_ramfs

@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot 2015.11.1-g439d11d Configuration
+# Buildroot 2015.11.1-g10fd2ad-dirty Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 
@@ -2090,12 +2090,6 @@ BR2_PACKAGE_SYSTEMD_ARCH_SUPPORTS=y
 # BR2_PACKAGE_UEMACS is not set
 
 #
-# IOTRPI packages
-#
-BR2_PACKAGE_GPIOMOD=y
-BR2_PACKAGE_LEDTEST=y
-
-#
 # Filesystem images
 #
 # BR2_TARGET_ROOTFS_AXFS is not set
@@ -2437,3 +2431,13 @@ BR2_LINUX_KERNEL_CUSTOM_GIT_VERSION=""
 # BR2_PACKAGE_INPUT_TOOLS_EVTEST is not set
 # BR2_BFIN_FDPIC is not set
 # BR2_BFIN_FLAT is not set
+
+#
+# User-provided options
+#
+
+#
+# IOTRPI packages
+#
+BR2_PACKAGE_GPIOMOD=y
+BR2_PACKAGE_LEDTEST=y

@@ -1,0 +1,4 @@
+menu "IOTRPI packages"
+	source "$BR2_EXTERNAL/gpiomod/Config.in"
+	source "$BR2_EXTERNAL/ledtest/Config.in"
+endmenu
